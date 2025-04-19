@@ -70,8 +70,16 @@ You have two options to call the API:
 https://special-journey-pjg4q4rv6vpqh7gq7-5000.app.github.dev/predict?W=1&X=20
 ```
 Or, in a new terminal, enter the following command:
-```
-curl "http://localhost:5000/predict?W=1&X=20
 
 ```
+curl "http://localhost:5000/predict?W=1&X=20
+```
+
 3. View returned output (JSON)
+```
+{
+  "W": 1.0,
+  "X": 20.0,
+  "predicted_engagement": 117.16
+}
+```
