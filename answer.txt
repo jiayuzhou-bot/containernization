@@ -1,0 +1,30 @@
+Question 1: ATE 
+a) Linear regression estimation
+We used ordinary least squares (OLS) linear regression to estimate the parameters:
+Intercept (α): 95.97
+Average Treatment Effect (τ): -9.11
+Coefficient for sustainability spending (β): 1.51
+
+b) Estimated ATE and significance
+The estimated ATE (τ̂) is -9.11, with a p-value of 0.0004.
+This result is statistically significant at the 1% level.
+
+c) Assumptions for causal interpretation
+The causal interpretation of the estimated ATE requires the following assumptions:
+Unconfoundedness: Treatment assignment must be independent of potential outcomes, conditional on observed covariates.
+No omitted variable bias: All relevant confounders must be included in the regression.
+Linearity and additive effects: The outcome is linearly related to the treatment and covariates.
+
+Question 2
+Predict Output:
+{
+  "W": 1.0,
+  "X": 20.0,
+  "predicted_engagement": 117.16
+}
+This means a company participating in the carbon offset program and spending $20,000 on sustainability is predicted to have a stakeholder engagement score of 117.16.
+
+Explanation of Components:
+The app.py file defines a Flask API that loads a linear regression model and provides a /predict endpoint to return predicted engagement scores based on input values. 
+The Dockerfile containerizes the environment to ensure consistent dependencies and runtime. 
+Containerization improves reproducibility and portability by isolating the application from local machine differences.

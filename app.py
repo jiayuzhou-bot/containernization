@@ -10,7 +10,7 @@ import statsmodels.api as sm
 
 app = Flask(__name__)
 
-# 原始数据
+# raw data
 data = {
     "Engagement_Score": [137, 118, 124, 124, 120, 129, 122, 142, 128, 114,
                          132, 130, 130, 112, 132, 117, 134, 132, 121, 128],
@@ -21,7 +21,7 @@ data = {
 }
 df = pd.DataFrame(data)
 
-# 拟合模型
+# fit model
 X = df[["Treatment", "Sustainability_Spending"]]
 X = sm.add_constant(X)
 y = df["Engagement_Score"]
@@ -30,7 +30,7 @@ model = sm.OLS(y, X).fit()
 @app.route("/estimate")
 def estimate():
     try:
-        # 获取回归参数
+        # Extract parameters
         alpha = round(model.params["const"], 2)
         tau = round(model.params["Treatment"], 2)
         beta = round(model.params["Sustainability_Spending"], 2)
@@ -57,7 +57,7 @@ def predict():
         return jsonify({
             "W": W,
             "X": X_val,
-            "predicted_engagement_score": round(y_pred, 2)  # 保留两位小数
+            "predicted_engagement_score": round(y_pred, 2)  # keep two decimal places
         })
     except Exception as e:
         return jsonify({"error": str(e)})
