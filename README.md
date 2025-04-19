@@ -44,7 +44,7 @@ https://special-journey-pjg4q4rv6vpqh7gq7-5000.app.github.dev/estimate?W=1&X=20
 Or, in a new terminal, enter the following command:
 
 ```
-curl "http://localhost:5000/estimate?W=1&X=20
+curl "http://localhost:5000/estimate?W=1&X=20"
 ```
 3. View returned output (JSON)
 
@@ -72,7 +72,7 @@ https://special-journey-pjg4q4rv6vpqh7gq7-5000.app.github.dev/predict?W=1&X=20
 Or, in a new terminal, enter the following command:
 
 ```
-curl "http://localhost:5000/predict?W=1&X=20
+curl "http://localhost:5000/predict?W=1&X=20"
 ```
 
 3. View returned output (JSON)
